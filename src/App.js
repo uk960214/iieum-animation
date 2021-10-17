@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 function App() {
   const contentRef = useRef([]);
@@ -12,10 +11,34 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <p onClick={() => handleClick(0)}>content1</p>
-        <p onClick={() => handleClick(1)}>content2</p>
-        <p onClick={() => handleClick(2)}>content3</p>
-        <p onClick={() => handleClick(3)}>content4</p>
+        <p
+          className="navLink"
+          onClick={() => handleClick(0)}
+          data-hover="content1"
+        >
+          content1
+        </p>
+        <p
+          className="navLink"
+          onClick={() => handleClick(1)}
+          data-hover="content2"
+        >
+          content2
+        </p>
+        <p
+          className="navLink"
+          onClick={() => handleClick(2)}
+          data-hover="content3"
+        >
+          content3
+        </p>
+        <p
+          className="navLink"
+          onClick={() => handleClick(3)}
+          data-hover="content4"
+        >
+          content4
+        </p>
       </nav>
 
       <div className="toTop" onClick={() => handleClick(0)}>
