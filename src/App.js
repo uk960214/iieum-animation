@@ -18,6 +18,9 @@ function App() {
         <p onClick={() => handleClick(3)}>content4</p>
       </nav>
 
+      <div className="toTop" onClick={() => handleClick(0)}>
+        Top
+      </div>
       <div
         ref={(e) => {
           contentRef.current[0] = e;

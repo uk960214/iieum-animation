@@ -9,6 +9,11 @@ nav {
   background-color: #000;
   color: white;
   display: flex;
+  height: 5vh;
+}
+nav * {
+  margin: 1rem;
+  cursor: pointer;
 }
 
 .container {
@@ -17,4 +22,13 @@ nav {
   text-align: center;
   font-size: 3rem;
   border-bottom: 2px solid #000;
+}
+
+.toTop {
+  position: fixed;
+  right: 5vh;
+  bottom: 5vh;
+  background-color: aquamarine;
+  padding: 2rem;
+  cursor: pointer;
 }
