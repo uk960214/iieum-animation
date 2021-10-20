@@ -15,8 +15,9 @@ nav {
   background-color: blueviolet;
   color: white;
   display: flex;
-  height: 6vh;
+  height: 8vh;
   font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .navLink {
@@ -27,12 +28,10 @@ nav {
 
 .navLink::before {
   position: absolute;
-  top: -1px;
   left: 0;
   overflow: hidden;
   max-width: 0;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 2px solid black;
   color: black;
   content: attr(data-hover);
   transition: max-width 0.5s;
@@ -57,4 +56,30 @@ nav {
   background-color: aquamarine;
   padding: 2rem;
   cursor: pointer;
+  border-radius: 50%;
+}
+
+#content2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  overflow: scroll;
+  position: relative;
+  transition: all 1s;
+}
+
+.card {
+  position: relative;
+  font-size: 1rem;
+  background: beige;
+  margin: 0.5rem;
+  border-radius: 5px;
+  height: 40vh;
+  min-width: 20%;
+  box-shadow: 1px 1px 10px #55555599;
+  transition: all 1s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
