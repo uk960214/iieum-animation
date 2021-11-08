@@ -1,55 +1,136 @@
 import React, { useState } from "react";
-import { Card, Container, StackButton } from "./Cards.elements";
+import {
+  Card,
+  CardL,
+  Container,
+  StackButton,
+  CardList,
+} from "./Cards.elements";
 
 const Cards = () => {
   const [stacked, setStacked] = useState(true);
+  const [grid, setGrid] = useState(4);
+  const [content, setContent] = useState("");
 
   const handleStack = () => {
     stacked ? setStacked(false) : setStacked(true);
+    setGrid(4);
+  };
+
+  const handleGrid = (e) => {
+    if (grid === 4) setGrid(2);
+    setContent(e.target.textContent);
+  };
+
+  const handleClose = () => {
+    setContent("");
+    setGrid(4);
   };
 
   return (
     <Container>
-      <Card
-        order={0}
-        stacked={stacked}
-        onClick={{ stacked } ? handleStack : ""}
-      >
-        card1
-      </Card>
-      <Card order={1} stacked={stacked}>
-        card2
-      </Card>
-      <Card order={2} stacked={stacked}>
-        card3
-      </Card>
-      <Card order={3} stacked={stacked}>
-        card4
-      </Card>
-      <Card order={4} stacked={stacked}>
-        card5
-      </Card>
-      <Card order={5} stacked={stacked}>
-        card6
-      </Card>
-      <Card order={6} stacked={stacked}>
-        card7
-      </Card>
-      <Card order={7} stacked={stacked}>
-        card8
-      </Card>
-      <Card order={8} stacked={stacked}>
-        card9
-      </Card>
-      <Card order={9} stacked={stacked}>
-        card10
-      </Card>
-      <Card order={10} stacked={stacked}>
-        card11
-      </Card>
-      <Card order={11} stacked={stacked}>
-        card12
-      </Card>
+      <CardList grid={grid}>
+        <Card
+          order={0}
+          stacked={stacked}
+          onClick={stacked ? handleStack : (e) => handleGrid(e)}
+          grid={grid}
+        >
+          card1
+        </Card>
+        <Card
+          order={1}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card2
+        </Card>
+        <Card
+          order={2}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card3
+        </Card>
+        <Card
+          order={3}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card4
+        </Card>
+        <Card
+          order={4}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card5
+        </Card>
+        <Card
+          order={5}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card6
+        </Card>
+        <Card
+          order={6}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card7
+        </Card>
+        <Card
+          order={7}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card8
+        </Card>
+        <Card
+          order={8}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card9
+        </Card>
+        <Card
+          order={9}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card10
+        </Card>
+        <Card
+          order={10}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card11
+        </Card>
+        <Card
+          order={11}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card12
+        </Card>
+      </CardList>
+      <CardL grid={grid}>
+        {content}
+        <p onClick={handleClose}>close</p>
+      </CardL>
       <StackButton onClick={() => handleStack()}>stack</StackButton>
     </Container>
   );
