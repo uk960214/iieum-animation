@@ -23,12 +23,12 @@ const Cards = () => {
   };
 
   const handleClose = () => {
-    setContent("");
     setGrid(4);
   };
 
   return (
     <Container>
+      <StackButton onClick={() => handleStack()}>stack</StackButton>
       <CardList grid={grid}>
         <Card
           order={0}
@@ -126,12 +126,35 @@ const Cards = () => {
         >
           card12
         </Card>
+        <Card
+          order={12}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card13
+        </Card>
+        <Card
+          order={13}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card14
+        </Card>
+        <Card
+          order={14}
+          stacked={stacked}
+          grid={grid}
+          onClick={(e) => handleGrid(e)}
+        >
+          card15
+        </Card>
       </CardList>
       <CardL grid={grid}>
-        {content}
+        {grid === 2 ? content : ""}
         <p onClick={handleClose}>close</p>
       </CardL>
-      <StackButton onClick={() => handleStack()}>stack</StackButton>
     </Container>
   );
 };
